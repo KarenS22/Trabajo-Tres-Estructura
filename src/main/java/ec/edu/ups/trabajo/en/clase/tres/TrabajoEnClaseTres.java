@@ -14,10 +14,10 @@ import java.util.Scanner;
  */
 public class TrabajoEnClaseTres {
 
-
     public static void main(String[] args) {
+        
         Vista vista = new Vista();
-        ControladorMain con = new ControladorMain(vista);
+        ControladorMain<String> con = new ControladorMain(vista);
         con.iniciar();
        /* Agenda<String> agenda = new Agenda<>();
          

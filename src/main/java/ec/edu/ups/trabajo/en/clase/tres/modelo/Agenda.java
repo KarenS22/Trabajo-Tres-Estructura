@@ -47,6 +47,17 @@ public class Agenda<T> {
         return actual.getNombre() + "-" + actual.getTelefono();
     }
     
+     public String buscarPorNombre(String nombre) {
+        Contacto<T> actual = persona;
+        while (actual != null) {
+            if (actual.getNombre().equals(nombre)) {
+                return actual.getNombre() + "-" + actual.getTelefono();
+            }
+            actual = actual.getSiguiente();
+        }
+        return "No se encontró a la persona con el nombre especificado";
+    }
+
     public void eliminar(String nombre){
         if(persona == null){
             return;

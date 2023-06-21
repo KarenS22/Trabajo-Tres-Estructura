@@ -14,11 +14,12 @@ import ec.edu.ups.trabajo.en.clase.tres.vista.Vista;
  */
 public class ControladorMain<T> {
     private Vista vista;
-    private Agenda agenda;
+    private Agenda<T> agenda;
    // private Contacto<T> contacto;
        
     public ControladorMain(Vista vista) {
         this.vista = vista;
+        this.agenda = new Agenda<>();
     }
 
     public ControladorMain() {
@@ -34,8 +35,8 @@ public class ControladorMain<T> {
             // Instancia de [dato] segun la opcion escogida
             switch (opcionPrincipal) {
                 case 1:
-                    String nombre = vista.pedirNombre();
-                    String telefono = vista.pedirTelefono();
+                    T nombre = (T)vista.pedirNombre();
+                    T telefono =(T) vista.pedirTelefono();
                    // contacto = new Contacto<T>(nombre, telefono);
                     agenda.agregar(nombre, telefono);
                     
@@ -45,8 +46,12 @@ public class ControladorMain<T> {
                     String elemento = agenda.getPersonaByIndice(indice);
                     vista.mostrarMensaje(elemento);
                     break;
-
-                case 3:
+                case 3: 
+                    String nombreB = vista.pedirNombre();
+                    String personaB = agenda.buscarPorNombre(nombreB);
+                    vista.mostrarMensaje(personaB);
+                    break;
+                case 4:
                     String nombreE = vista.pedirNombre();
                     agenda.eliminar(nombreE);
                     break;

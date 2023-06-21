@@ -22,7 +22,8 @@ public class Vista {
         System.out.println("===== MENU PRINCIPAL =====");
         System.out.println("1. agregar");
         System.out.println("2. buscar");
-        System.out.println("3. eliminar");
+        System.out.println("3.buscar por nombre");
+        System.out.println("4. eliminar");
         System.out.println("0. Salir");
         System.out.print("Ingrese una opción: ");
         int opcion = scanner.nextInt();
@@ -40,7 +41,7 @@ public class Vista {
     }
      
           public int pedirIndice() {
-        System.out.print("Ingrese el telefono: ");
+        System.out.print("Ingrese el indice a buscar: ");
         return scanner.nextInt();
     }
 
